@@ -105,4 +105,7 @@ safetyExample = 1
     Some may be your boss.
     Some may be the bosses' boss.
     But as you can see, an employee can be multuple things.
+ 4.Inheritance
+    Building off the Employee example, let's say we have an employee that will be promoted to a new position, lets say admin.
+    They will inherit the responsibilties and title of admin.
  */
