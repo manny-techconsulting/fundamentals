@@ -9,14 +9,17 @@
  **/
 
 //  1. Arrays
+//Ordered -> index is their order
 let numsArray:[Int] = [0,1,2,3,4,5,6,7,8,9]
 print(numsArray[0])
 
+
 //  2. Sets
+// Unordered
 let numsSet:Set<Int> = [0,1,2,3,4,5,7,8,9]
 print(numsSet.contains(3))
 
-//  3. Dictionary
+//  3. Dictionary -> dependent on how you decide. You can order by key
 let numsDict: [Int: Int] = [2:4, 6:8]
 print(numsDict)
 
@@ -93,6 +96,13 @@ repeat{
 
 //7.FUNCTIONS
 
+//Void Function
+func hello() -> Void {
+    print("hello")
+}
+
+hello()
+
 //Functions without parameters
 func helloWorld()->String{
     return "helloWorld"
@@ -112,8 +122,26 @@ func calculateVolumeofCube(length:Int, width: Int, height:Int) -> Int{
 func printWithoutLabels(_ param1: String, _ param2:String){
     print(param1, param2)
 }
+
+//Functions with functions as arguments
+func makeAnArry(capacity:Int, using creator: () -> Int )->[Int]{
+    var numbers:[Int] = []
+    for _ in 0..<capacity{
+        var n = creator()
+        numbers.append(n)
+    }
+    return numbers
+}
+
+func generateZeros() -> Int{
+    return 0
+}
+
+print(makeAnArry(capacity: 10, using: generateZeros))
+
 printWithoutLabels("no", "labels")
 
+//Function with Variabl Parameters
 func sumNum(_ nums: Int...) -> Int{
     var total = 0
     for n in nums {
